@@ -5,35 +5,35 @@ import java.util.ArrayList;
 public class Firma {
     private String name;
     private String adresse;
-    private int anzahlRäume;
-    private int maxRäume;
-    private ArrayList<Integer> raumGrössen;
+    private int anzahlRaeume;
+    private int maxRaeume;
+    private ArrayList<Integer> raumGroessen;
     private ArrayList<Boolean> raumGebucht;
 
-    public Firma(String name, String adresse, int anzahlRäume, int maxRäume) {
-      this.name = name;
-      this.adresse = adresse;
-      this.anzahlRäume = anzahlRäume;
-      this.maxRäume = maxRäume;
-      this.raumGrössen = new ArrayList<>();
-      this.raumGebucht = new ArrayList<>();
+    public Firma(String name, String adresse, int anzahlRaeume, int maxRaeume) {
+        this.name = name;
+        this.adresse = adresse;
+        this.anzahlRaeume = anzahlRaeume;
+        this.maxRaeume = maxRaeume;
+        this.raumGroessen = new ArrayList<>();
+        this.raumGebucht = new ArrayList<>();
     }
 
     public void fuegeRaumHinzu(int plaetze) {
-        if (anzahlRäume < maxRäume) {
-            raumGrössen.add(plaetze);
+        if (anzahlRaeume < maxRaeume) {
+            raumGroessen.add(plaetze);
             raumGebucht.add(false);
-            anzahlRäume++;
+            anzahlRaeume++;
         } else {
             System.out.println("Maximale Anzahl an Räumen erreicht!");
         }
     }
 
     public int sucheRaum(int plaetze) {
-        for (int i = 0; i < anzahlRäume; i++) {
-            if (!raumGebucht.get(i) && raumGrössen.get(i) >= plaetze) {
-              raumGebucht.set(i, true);
-              return i+1;
+        for (int i = 0; i < anzahlRaeume; i++) {
+            if (!raumGebucht.get(i) && raumGroessen.get(i) >= plaetze) {
+                raumGebucht.set(i, true);
+                return i + 1;
             }
         }
         return -1;
@@ -43,13 +43,11 @@ public class Firma {
         int frei = 0;
         for (boolean gebucht : raumGebucht) {
             if (!gebucht) {
-                frei ++;
+                frei++;
             }
         }
         return frei;
     }
-
-    //Alle Attribute müssen gelesen werden können.
 
     public String getName() {
         return name;
@@ -59,12 +57,12 @@ public class Firma {
         return adresse;
     }
 
-    public int getAnzahlRäume() {
-        return anzahlRäume;
+    public int getAnzahlRaeume() {
+        return anzahlRaeume;
     }
 
-    public int getMaxRäume() {
-        return maxRäume;
+    public int getMaxRaeume() {
+        return maxRaeume;
     }
-
 }
+

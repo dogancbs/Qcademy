@@ -29,4 +29,8 @@ public class Bibliothek {
         buchlist.remove(buch);
         System.out.println("Buch " + buch.getTitel() + "wurde gelöscht");
     }
+
+    public List<Buch> getBuchlist() {
+        return buchlist;
+    }
 }

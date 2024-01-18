@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+New line
+
+second line
+
+third line
+=======
+New stuff in GitHub
+>>>>>>> b6c91bfc2bbc1b668ae3f7227f5c846df56da8c6
